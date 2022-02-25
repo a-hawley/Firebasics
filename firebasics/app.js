@@ -1,6 +1,12 @@
-//Create instance
+//Initialize Firebase and database
 document.addEventListener("DOMContentLoaded", event => {
+    
     const app = firebase.app();
+
+    const db = firebase.firestore();
+
+    const myPost = db.collection('posts').doc('firstpost');
+
 });
 
 
@@ -12,8 +18,9 @@ function googleLogin(){
 
         .then(result => {
             const user = result.user;
-            document.write(`Hello ${user.displayName}`);
+            document.write(`Hello ${user.displayName}! Thanks for joining!`);
             console.log(user)
-        })
+            
+    })
         .catch(console.log);
-}
+} 
